@@ -7,3 +7,39 @@ body{
     background: rgb(221, 239, 250);
     height: 100vh;
 }
+
+main{
+    margin: 1rem;
+}
+h1{
+    margin-bottom: 1rem;
+}
+
+form{
+    display: flex;
+}
+
+.input{
+width: 680px;
+height: 2.5rem;
+font-size: 1.1em;
+font-weight: 400;
+border-radius: 0.5rem;
+padding-left: 4px;
+outline: none;
+border: 1px solid #ced4da;
+}
+button{
+height: 2.5rem;
+min-width: 58px;
+padding: 3px 10px;
+background-color: #0000ff;
+outline: none;
+cursor: pointer;
+color: #ffffff;
+font-size: 1.1em;
+font-weight: 400;
+text-align: center;
+margin-left: 1rem;
+border-radius: .25rem;
+}
