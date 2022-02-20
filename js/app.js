@@ -6,7 +6,5 @@ const moviesearchable = document.querySelector('#movies-searchable');
 const moviesContainer = document.querySelector('#movies-container');
 const mainContent = document.querySelector('.main');
 
-
-
-
+buttonElement.addEventListener('click', search);
 
