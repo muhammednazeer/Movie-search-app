@@ -71,3 +71,25 @@ function search(event) {
     inputElement.value = '';
 }
 
+function createIframe(video) {
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://youtube.com/embed/${video.key}`;
+    iframe.width = 360;
+    iframe.height = 315;
+    iframe.allowFullscreen = true;
+    return iframe;
+    
+}
+function createVideoTemplate(data, content) {
+    content.innerHTML = `<p id="content-close">X</p>`;
+    //display videos
+    const videos = data.results;
+    const length = videos.length > 4 ? 4 : videos.length;
+    const iframeContainer = document.createElement('div');
+    for (let i = 0; i < length; i++) {
+        const video = videos[i]  //video
+        const iframe = createIframe(video);
+        iframeContainer.appendChild(iframe);
+        content.appendChild(iframeContainer);
+    }
+}
