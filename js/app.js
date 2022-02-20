@@ -125,6 +125,11 @@ mainContent.addEventListener('click', (event) => {
     
 })
 
+getUpComingMovies();
+
+getPopularMovies();
+
+getTopRatedMovies();
 
 
 
