@@ -59,3 +59,15 @@ function renderMovies(data) {
 }
 
 
+function handleError(error) {
+    console.log('Error', error);
+}
+
+function search(event) {
+    event.preventDefault();
+    const value = inputElement.value;
+    searchMovie(value);
+    
+    inputElement.value = '';
+}
+
