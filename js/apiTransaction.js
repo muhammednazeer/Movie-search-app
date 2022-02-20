@@ -8,3 +8,10 @@ function generateUrl(path) {
     return url;
 }
 
+function requestMovies(url, onComplete, onError) {
+    fetch(url)
+        .then(res => res.json())
+        .then(onComplete)
+        .catch(onError);
+}
+
