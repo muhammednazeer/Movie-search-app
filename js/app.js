@@ -93,3 +93,39 @@ function createVideoTemplate(data, content) {
         content.appendChild(iframeContainer);
     }
 }
+//Event delegations
+mainContent.addEventListener('click', (event) => {
+    event.preventDefault();
+    const target = event.target;
+    const close = document.querySelector('#content-close');
+    if (target.tagName.toLowerCase() == 'img') {
+        const movieId = target.dataset.movieId;
+        console.log('Movie ID', movieId);
+        const section = target.parentElement; //section
+        const content = section.nextElementSibling; //content
+        content.classList.add('content-display');
+
+        const path = `/movie/${movieId}/videos`;
+        const url = generateUrl(path)
+        //fetch movies videos
+        fetch(url)
+            .then(res => res.json())
+            .then((data) => createVideoTemplate(data, content))
+            .catch(error => {
+                console.log('Error ', error);
+            });
+    }
+
+    if (target.id == 'content-close') {
+        const content = target.parentElement;
+        content.classList.remove('content-display');
+        
+    }
+
+    
+})
+
+
+
+
+
