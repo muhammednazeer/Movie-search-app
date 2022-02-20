@@ -8,15 +8,21 @@
         <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <main>
-         <h1>Welcome to my movie App</h1>
+    <header>
+         <h1>Welcome to my movie search App</h1>
         <form>
            <div class="form-group">
-               <input type="text" placeholder="search for a movie..." autocomplete="false" class="input" id="input-value">
+               <input type="text" placeholder="search for a movie..." autocomplete="off" class="input" id="inputValue">
            </div>
            <button type="submit" id="search">Search a movie </button>
         </form>
+    </header>
+    <main class="main">
+        <div id="movies-searchable"></div>
+        <div id="movies-container"></div>
+
     </main>
+    <script src="./js/apiTransaction.js"></script>
     <script src="./js/app.js"></script>
 </body>
 </html>
