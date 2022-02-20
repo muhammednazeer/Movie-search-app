@@ -15,3 +15,29 @@ function requestMovies(url, onComplete, onError) {
         .catch(onError);
 }
 
+function searchMovie(value) {
+    const path = '/search/movie';
+    const url = generateUrl(path) + '&query=' + value;
+    requestMovies(url, renderSearch, handleError)
+}
+
+function getUpComingMovies() {
+    const path = '/movie/upcoming';
+    const url = generateUrl(path);
+    const render = renderMovies.bind({title: 'Upcoming Movies'})
+    requestMovies(url, render, handleError)
+}
+
+function getTopRatedMovies() {
+    const path = '/movie/top_rated';
+    const url = generateUrl(path);
+    const render = renderMovies.bind({ title: 'Top-Rated Movies' })
+    requestMovies(url,render, handleError)
+}
+
+function getPopularMovies() {
+    const path = '/movie/popular';
+    const url = generateUrl(path);
+    const render = renderMovies.bind({ title: 'Popular Movies' })
+    requestMovies(url, render, handleError);
+}
