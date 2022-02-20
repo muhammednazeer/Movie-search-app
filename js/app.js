@@ -41,3 +41,21 @@ function createMovieContainer(movies, title = '') {
     return movieElement;
 }
 
+function renderSearch(data) {
+     //data.results[]
+    const movies = data.results;
+    moviesearchable.innerHTML = '';
+    const movieBlock = createMovieContainer(movies);
+    moviesearchable.appendChild(movieBlock);
+    console.log('Data ', data)
+}
+
+function renderMovies(data) {
+    //data.results[]
+    const movies = data.results;
+    const movieBlock = createMovieContainer(movies, this.title);
+    moviesContainer.appendChild(movieBlock);
+    console.log('Data ', data)
+}
+
+
